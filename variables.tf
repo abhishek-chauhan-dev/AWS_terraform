@@ -4,11 +4,17 @@ variable "environment" {
   default     = "dev"
 }
 
+variable "bucket_name" {
+  type = list(string)
+  description = "List of S3 bucket names"
+}
+
 variable "tags" {
   type = map(string)
+  description = "Tags to apply to resources"
   default = {
     "Environment" = "dev"
-    "Team" = "DevOps"
-    "Organization" = "Cosmos"
+    "Team" = "Ubuntu"
+    "Organization" = "Deimos"
   }
 }
