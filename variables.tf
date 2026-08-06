@@ -18,3 +18,8 @@ variable "tags" {
     "Organization" = "Deimos"
   }
 }
+
+variable "security_group" {
+  type = tuple([string, number, number, string, string])
+  description = "Security group rule parameters: [type, from_port, to_port, protocol, region]"
+}
