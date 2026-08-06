@@ -5,7 +5,7 @@ variable "environment" {
 }
 
 variable "bucket_name" {
-  type = list(string)
+  type = set(string)
   description = "List of S3 bucket names"
 }
 
