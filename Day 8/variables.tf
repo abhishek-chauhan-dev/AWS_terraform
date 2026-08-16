@@ -13,3 +13,8 @@ variable "tags" {
     type = map(string)
     description = "define tags attached to resource"
 }
+
+variable "bucket_name_set" {
+    type = set(string)
+    description = "define set of bucket names"
+}
