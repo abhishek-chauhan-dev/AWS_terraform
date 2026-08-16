@@ -12,4 +12,9 @@ resource "aws_s3_bucket" "bucket_2" {
   bucket = each.value
   region = var.region
   tags = var.tags
+  
+  # defining explicit dependency
+  depends_on = [
+    aws_s3_bucket.bucket_1
+  ]
 }
