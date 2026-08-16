@@ -1,0 +1,7 @@
+output "bucket_name" {
+    value = aws_s3_bucket.bucket_1[*].bucket
+}
+
+output "tags" {
+    value = aws_s3_bucket.bucket_1[*].tags
+}
