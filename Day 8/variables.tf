@@ -18,3 +18,8 @@ variable "bucket_name_set" {
     type = set(string)
     description = "define set of bucket names"
 }
+
+variable "bucket_name_map" {
+    type = map(string)
+    description = "define attributes of a bucket"
+}
