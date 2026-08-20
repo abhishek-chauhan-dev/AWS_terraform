@@ -24,5 +24,24 @@ variable "new_tags" {
 
 variable "bucket_name" {
     type = string
-    default = "Ubuntu_26.04_cosmos_Tf_Bucket"
+    default = "Ubuntu_#26.04$_cosmos_Tf_Bucket"
+}
+
+variable "ports" {
+    type = string
+    default = "80,443,22,6443"
+}
+
+variable "instance_type" {
+    type = map(string)
+    default = {
+      "dev" = "t1.micro"
+      "stage" = "t2.micro"
+      "prod" = "t3.micro"
+    }
+}
+
+variable "environment" {
+    type = string
+    default = "dev"
 }

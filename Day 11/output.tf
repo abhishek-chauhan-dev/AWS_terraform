@@ -20,3 +20,15 @@ output "tags" {
 output "bucket_name" {
   value = local.bucket_name
 }
+
+output "port_list" {
+  value = local.port_list
+}
+
+output "sg_rules" {
+  value = local.sg_rules
+}
+
+output "instance_type" {
+  value = local.instance_type
+}
