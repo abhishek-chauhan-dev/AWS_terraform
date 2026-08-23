@@ -24,7 +24,7 @@ variable "ingress_rules" {
   }))
 
   default = [ {
-    cidr_ipv4 = "Enter_your_public_IP/32"
+    cidr_ipv4 = "182.77.65.134/32"
     from_port = 22
     ip_protocol = "tcp"
     to_port = 22

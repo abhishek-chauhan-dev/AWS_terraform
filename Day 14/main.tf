@@ -84,3 +84,39 @@ resource "aws_instance" "phobos_instance" {
   # Meta arguments
   depends_on = [ aws_security_group.allow_tls ]
 }
+
+#===Loops===#
+# 1. count
+
+variable "users_list" {
+  type = list(string)
+  default = [ "user1", "user2", "user3", "user2" ]
+}
+
+resource "aws_iam_user" "iam_users" {
+  count = length(var.users_list)
+  name = var.users_list[count.index]
+}
+
+# 2. for_each
+
+variable "users_list" {
+  type = set(string)
+  default = [ "user1", "user2", "user3" ]
+}
+
+resource "aws_iam_user" "iam_users" {
+  for_each = var.users_list
+  name = each.key
+}
+
+# 3. for
+
+variable "users_list" {
+  type = set(string)
+  default = [ "user1", "user2", "user3" ]
+}
+
+output "show_users" {
+  value = [for bro in var.users_list: bro]
+}
